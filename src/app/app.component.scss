@@ -4,7 +4,7 @@
   width: 275px;
 }
 .mat-sidenav-container {
-  background-color: white !important;
+  background-color: #eaeaea !important;
   height: 100vh;
 }
 .sidenav-toolbar {
@@ -18,4 +18,17 @@
 }
 .mat-nav-list {
   padding-top: 0;
+}
+
+
+.inside-top-bar{
+  background: #7d4ed0;
+
+  .mat-toolbar-row{
+    height: 90px;
+  }
+}
+
+.main-container{
+  padding: 0px 15px 0px 15px;
 }

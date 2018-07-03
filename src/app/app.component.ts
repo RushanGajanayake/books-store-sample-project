@@ -9,7 +9,7 @@ import {Component, ViewChild, ElementRef, ViewEncapsulation, AfterViewInit} from
 export class AppComponent {
   title = 'app';
 
-  opened: boolean;
+  pagetitle: string = "All Books";
 
   constructor() {
   }

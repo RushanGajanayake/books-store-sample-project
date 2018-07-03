@@ -16,9 +16,7 @@ export class ToolbarComponent implements OnInit {
   }
 
   toggleSidenav(event) {
-    // this.sidenav.mode = 'over';
     this.sidenav.open();
-    console.log("fuck");
   }
 
 }

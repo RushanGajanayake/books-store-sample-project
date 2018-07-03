@@ -1,3 +1,41 @@
-<p>
-  books-handling works!
-</p>
+
+
+<div class="container">
+  <div [fxLayout]="'row wrap'">
+    <div fxFlexOffset.gt-md="20" fxFlex.gt-xs="100%" fxFlex.gt-md="60">
+      <mat-card class="add-books">
+          <mat-card-header>
+            <mat-card-title>ADD BOOK</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="input-form">
+              <div [fxLayout]="'row wrap'">
+                  <input placeholder="Book Name" type="text" #name fxFlex.gt-xs="100%" fxFlex.gt-md="50">
+                  <input placeholder="Author" type="text" #author fxFlex.gt-xs="100%" fxFlex.gt-md="50">
+              </div>
+              <div [fxLayout]="'row wrap'">
+                  <textarea placeholder="Discription" type="text" #disc fxFlex.gt-xs="100%" fxFlex.gt-md="100" style="height:70px"></textarea>
+              </div>
+            </div>
+            <div class="add-btn">
+              <button mat-raised-button (click)="addNewBook(name.value,author.value,disc.value)" color="warn">Add</button>
+            </div>
+          </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <div [fxLayout]="'row wrap'">
+          <mat-card class="book-list" *ngFor="let book of books | async; let i = index" fxFlex.gt-xs="100%" fxFlex.gt-md="100"  fxLayoutGap="2px">
+            <button mat-mini-fab class="list-close-btn" color="warn">
+              <mat-icon >clear</mat-icon>
+            </button>
+            <mat-card-header>
+              <div mat-card-avatar class="list-header-image"></div>
+              <mat-card-title>{{book.name}}</mat-card-title>
+              <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
+            </mat-card-header>
+          </mat-card>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

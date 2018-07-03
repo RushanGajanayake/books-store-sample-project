@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import 'hammerjs';
-
 import { MaterialModule} from './material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentsModule } from './components/components';
 
@@ -15,6 +15,15 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { AllBooksComponent } from './all-books/all-books.component';
 import { BooksHandlingComponent } from './books-handling/books-handling.component';
 
+import { DataServiceService } from './data-service/data-service.service';
+import { RouteDetailsService } from './data-service/route-details.service';
+
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { DBModule } from '@ngrx/db';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+import { reducer } from './reducer/book.reducer';
 
 
 @NgModule({
@@ -31,9 +40,11 @@ import { BooksHandlingComponent } from './books-handling/books-handling.componen
     MaterialModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ComponentsModule
+    ComponentsModule,
+    FlexLayoutModule,
+    StoreModule.forRoot({book: reducer})
   ],
-  providers: [],
+  providers: [DataServiceService, RouteDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

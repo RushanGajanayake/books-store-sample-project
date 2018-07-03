@@ -1,0 +1,47 @@
+
+.add-books{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.book-list{
+  margin: 7px;
+}
+
+.list-close-btn{
+  display: block;
+  position: absolute;
+  left: 98%;
+  top: -20px;
+}
+
+.input-form{
+  padding: 10px;
+
+  div{
+    flex-flow: nowrap !important;
+
+    input, textarea{
+      width: 100%;
+      margin: 5px;
+      padding: 12px 20px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input::placeholder, textarea::placeholder {
+      font-family: Roboto,"Helvetica Neue",sans-serif;
+    }
+  }
+}
+
+.add-btn{
+  padding-left: 15px;
+}
+
+.list-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}

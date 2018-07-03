@@ -9,9 +9,14 @@ export class SidenavComponent implements OnInit {
   @Input()
     sidenav: any;
 
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  closeSidenav(event) {
+    this.sidenav.close();
   }
 
 }
