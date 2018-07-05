@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import 'hammerjs';
 import { MaterialModule} from './material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentsModule } from './components/components';
+import { HttpModule } from '@angular/http';
 
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
@@ -24,6 +26,7 @@ import { DBModule } from '@ngrx/db';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { reducer } from './reducer/book.reducer';
+import { BooksEffects } from './effects/book.effect';
 
 
 @NgModule({
@@ -42,7 +45,13 @@ import { reducer } from './reducer/book.reducer';
     BrowserAnimationsModule,
     ComponentsModule,
     FlexLayoutModule,
-    StoreModule.forRoot({book: reducer})
+    HttpModule,
+    FormsModule,
+    ReactiveFormsModule,
+    StoreModule.forRoot({book: reducer}),
+    EffectsModule.forRoot([
+        BooksEffects
+    ])
   ],
   providers: [DataServiceService, RouteDetailsService],
   bootstrap: [AppComponent]

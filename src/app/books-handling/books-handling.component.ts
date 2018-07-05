@@ -4,6 +4,9 @@ import { Book } from '../models/book.model';
 import { AppState } from '../app.state';
 import * as BookActions from '../action/book.action';
 import { Observable } from 'rxjs/Observable';
+import * as BookReducers from '../reducer/book.reducer';
+import {FormBuilder, FormControl, NgForm, FormGroup, FormGroupDirective, Validators} from '@angular/forms'
+
 
 @Component({
   selector: 'app-books-handling',
@@ -13,16 +16,32 @@ import { Observable } from 'rxjs/Observable';
 export class BooksHandlingComponent implements OnInit {
 
   books: Observable<Book[]>;
+  book:  Book;
 
-  constructor(private store: Store<AppState>) {
-    this.books = store.select('book');
+  formGroup: FormGroup;
+
+  constructor(private store: Store<AppState>, private _formBuilder: FormBuilder) {
+    this.books = store.select(BookReducers.getBooks);
+    this.book = {
+      id:null,
+      name:"",
+      author:"",
+      discription:""
+    };
+    // this.book = new Book();
   }
 
   ngOnInit() {
+    this.formGroup = this._formBuilder.group({});
+    this.store.dispatch(new BookActions.LoadBook());
   }
 
-  addNewBook(name,author,disc){
-    this.store.dispatch(new BookActions.AddBook({name:name, author:author, discription:disc}))
+  addNewBook(){
+    this.store.dispatch(new BookActions.AddBook(this.book))
+  }
+
+  removeBook(book){
+    this.store.dispatch(new BookActions.RemoveBook(book));
   }
 
 }
