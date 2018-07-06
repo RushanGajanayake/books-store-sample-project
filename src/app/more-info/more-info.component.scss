@@ -1,0 +1,33 @@
+
+.input-form{
+  padding: 10px;
+
+  div{
+    flex-flow: nowrap !important;
+
+    div{
+      margin: 5px 0px 5px 0px;
+    }
+
+    label{
+      margin: 1px 5px 1px 5px;
+      display: inline-block;
+      font-size: 14px;
+      color: #ccc
+    }
+
+    input, textarea{
+      width: 99%;
+      margin: 5px;
+      padding: 12px 20px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input, textarea{
+      font-family: Roboto,"Helvetica Neue",sans-serif;
+    }
+  }
+}
