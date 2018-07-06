@@ -1,3 +1,15 @@
+.inside-top-bar{
+  background: #7d4ed0;
+
+  .mat-toolbar-row{
+    height: 90px;
+  }
+}
+
+.container{
+  padding: 0px 15px 0px 15px;
+}
+
 .book-card {
   margin: 10px;
 }
@@ -18,3 +30,9 @@
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
 }
+
+.mat-form-field{
+  left: 75%;
+  font-size: 18px;
+}
+

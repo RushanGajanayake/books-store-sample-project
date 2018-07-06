@@ -1,5 +1,14 @@
+<mat-toolbar class="inside-top-bar" color="primary">
+    <mat-toolbar-row>
+      <span><h1>All Books</h1></span>
 
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+      </mat-form-field>
+    </mat-toolbar-row>
+  </mat-toolbar>
 <div class="container">
+
   
   <div [fxLayout]="'row wrap'">
     <mat-card class="book-card" *ngFor="let book of books | async; let i = index" fxFlex.gt-xs="50%" fxFlex.gt-md="30"  fxLayoutGap="2px">
@@ -14,7 +23,7 @@
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button>More</button>
+        <button mat-button (click)="moreInfo(book)">More</button>
       </mat-card-actions>
     </mat-card>
   </div>

@@ -68,6 +68,14 @@ export function reducer( state = initialState , action: BookActions.Actions): Bo
         state.books.splice(state.books.indexOf(action.payload),1);
         return state;
 
+    case BookActions.SEARCH_BOOK_COMPLETED:
+        return{
+          ...state,
+          loading:false,
+          loaded: true,
+          books: action.payload
+        };
+
     default:
         return state;
   }

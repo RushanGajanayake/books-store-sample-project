@@ -11,6 +11,9 @@ export const LOAD_BOOK_FAILED =  '[Book] Load Failed';
 export const REMOVE_BOOK =  '[Book] Remove';
 export const REMOVE_BOOK_SUCCESS =  '[Book] Remove Success';
 export const REMOVE_BOOK_FAILED =  '[Book] Remove Failed';
+export const SEARCH_BOOK = '[Book] Search';
+export const SEARCH_BOOK_COMPLETED = '[Book] Search Completed';
+
 
 export class AddBook implements Action{
   readonly type = ADD_BOOK;
@@ -65,6 +68,19 @@ export class LoadFailedBook implements Action{
 
 }
 
+export class SearchBook implements Action{
+  readonly type = SEARCH_BOOK;
+
+  constructor (public payload: string) {}
+}
+
+export class SearchBookCompleted implements Action{
+  readonly type = SEARCH_BOOK_COMPLETED;
+
+  constructor (public payload: Book[]) {}
+}
+
 export type Actions = AddBook | AddBookSuccess | AddBookFailed | 
                       RemoveBook | RemoveBookSuccess | RemoveBookFailed | 
-                      LoadBook | LoadSuccessBook | LoadFailedBook;
+                      LoadBook | LoadSuccessBook | LoadFailedBook |
+                      SearchBook | SearchBookCompleted;

@@ -18,13 +18,13 @@ import * as BookActions from '../action/book.action';
 export class BooksEffects {
 
 
-  constructor(
-    private actions$: Actions,
-    private _dataService: DataServiceService
-  ) { }
+    constructor(
+      private actions$: Actions,
+      private _dataService: DataServiceService
+    ) { }
 
-  @Effect()
-  loadBooks$:Observable<Action> = this.actions$
+    @Effect()
+    loadBooks$:Observable<Action> = this.actions$
     .ofType(BookActions.LOAD_BOOK)
     .switchMap(() =>
        this._dataService.getAllBooksData()
@@ -48,11 +48,21 @@ export class BooksEffects {
       .ofType<BookActions.RemoveBook>(BookActions.REMOVE_BOOK)
       .map(action => action.payload)
       .mergeMap(book =>{
-          console.log(book);
          return this._dataService.deleteBookData(book.id)
          .map(res =>{
            console.log(res); 
            return new BookActions.RemoveBookSuccess(book)})}
       );
+
+    @Effect()
+    searchBooks$:Observable<Action> = this.actions$
+    .ofType<BookActions.SearchBook>(BookActions.SEARCH_BOOK)
+    .debounceTime(300)
+    .switchMap( query =>
+       this._dataService.getAllBooksData()
+       .map(data =>{
+         var filteredBooks = data.filter(book=> book.name.includes(query.payload)  || book.author.includes(query.payload));
+         return new  BookActions.SearchBookCompleted(filteredBooks)})
+    );
 
 }
