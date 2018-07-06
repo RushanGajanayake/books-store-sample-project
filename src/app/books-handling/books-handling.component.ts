@@ -38,7 +38,9 @@ export class BooksHandlingComponent implements OnInit {
   }
 
   addNewBook(){
-    this.store.dispatch(new BookActions.AddBook(this.book))
+    if(this.book.name != "" && this.book.author != ""){
+       this.store.dispatch(new BookActions.AddBook(this.book))
+    }
   }
 
   removeBook(book){

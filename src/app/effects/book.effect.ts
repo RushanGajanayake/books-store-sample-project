@@ -37,8 +37,9 @@ export class BooksEffects {
       .ofType<BookActions.AddBook>(BookActions.ADD_BOOK)
       .map(action => action.payload)
       .mergeMap(book =>{
+        console.log(book);
          return this._dataService.createNewBookData(book)
-         .map(res => new BookActions.AddBookSuccess(res))
+         .map(res => {console.log(res); return new BookActions.AddBookSuccess(res)})
       }
       );
 
@@ -47,6 +48,7 @@ export class BooksEffects {
       .ofType<BookActions.RemoveBook>(BookActions.REMOVE_BOOK)
       .map(action => action.payload)
       .mergeMap(book =>{
+        console.log(book);
          return this._dataService.deleteBookData(book.id)
          .map(res =>{
            return new BookActions.RemoveBookSuccess(book)})}

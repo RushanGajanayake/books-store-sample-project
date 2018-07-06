@@ -19,7 +19,6 @@ export class MoreInfoComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-  	console.log(this.data);
   	this.book = this.data.book;
   }
 

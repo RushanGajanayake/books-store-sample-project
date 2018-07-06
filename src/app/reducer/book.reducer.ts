@@ -44,8 +44,17 @@ export function reducer( state = initialState , action: BookActions.Actions): Bo
           ...state,
           loading:false,
           loaded: true,
-          books: [action.payload, ...state.books]
+          books: [...state.books]
         });
+
+    case BookActions.ADD_BOOK_SUCCESS:
+       console.log(action.payload)
+        return  {
+          ...state,
+          loading:false,
+          loaded: true,
+          books: [action.payload, ...state.books]
+        };
 
     case BookActions.ADD_BOOK_FAILED:
         return{
