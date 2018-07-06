@@ -27,15 +27,18 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { reducer } from './reducer/book.reducer';
 import { BooksEffects } from './effects/book.effect';
+import { MoreInfoComponent } from './more-info/more-info.component';
 
 
 @NgModule({
+  entryComponents: [MoreInfoComponent],
   declarations: [
     AppComponent,
     SidenavComponent,
     ToolbarComponent,
     AllBooksComponent,
-    BooksHandlingComponent
+    BooksHandlingComponent,
+    MoreInfoComponent
   ],
   imports: [
     BrowserModule,

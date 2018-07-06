@@ -56,7 +56,6 @@ export function reducer( state = initialState , action: BookActions.Actions): Bo
         };
 
     case BookActions.REMOVE_BOOK:
-        // state.splice(action.payload,1);
         return{
           ...state,
           loading:false,

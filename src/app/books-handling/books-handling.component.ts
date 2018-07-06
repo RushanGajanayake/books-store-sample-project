@@ -5,7 +5,7 @@ import { AppState } from '../app.state';
 import * as BookActions from '../action/book.action';
 import { Observable } from 'rxjs/Observable';
 import * as BookReducers from '../reducer/book.reducer';
-import {FormBuilder, FormControl, NgForm, FormGroup, FormGroupDirective, Validators} from '@angular/forms'
+import { FormBuilder, FormControl, NgForm, FormGroup, FormGroupDirective, Validators} from '@angular/forms';
 
 
 @Component({
@@ -28,7 +28,6 @@ export class BooksHandlingComponent implements OnInit {
       author:"",
       discription:""
     };
-    // this.book = new Book();
   }
 
   ngOnInit() {

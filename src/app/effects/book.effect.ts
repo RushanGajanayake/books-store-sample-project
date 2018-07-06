@@ -29,7 +29,6 @@ export class BooksEffects {
     .switchMap(() =>
        this._dataService.getAllBooksData()
        .map(data =>{
-         console.log(data);
          return new  BookActions.LoadSuccessBook(data)})
     );
 
@@ -50,7 +49,6 @@ export class BooksEffects {
       .mergeMap(book =>{
          return this._dataService.deleteBookData(book.id)
          .map(res =>{
-           console.log(res); 
            return new BookActions.RemoveBookSuccess(book)})}
       );
 
