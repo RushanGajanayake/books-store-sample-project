@@ -5,7 +5,9 @@ import { AppState } from '../app.state';
 import * as BookActions from '../action/book.action';
 import { Observable } from 'rxjs/Observable';
 import * as BookReducers from '../reducer/book.reducer';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { FormBuilder, FormControl, NgForm, FormGroup, FormGroupDirective, Validators} from '@angular/forms';
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 
 
 @Component({
@@ -20,7 +22,7 @@ export class BooksHandlingComponent implements OnInit {
 
   formGroup: FormGroup;
 
-  constructor(private store: Store<AppState>, private _formBuilder: FormBuilder) {
+  constructor(private store: Store<AppState>, private _formBuilder: FormBuilder, public dialog: MatDialog) {
     this.books = store.select(BookReducers.getBooks);
     this.book = {
       id:null,
@@ -40,7 +42,15 @@ export class BooksHandlingComponent implements OnInit {
   }
 
   removeBook(book){
-    this.store.dispatch(new BookActions.RemoveBook(book));
+    let dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+            width: '500px'
+        });
+
+        dialogRef.afterClosed().subscribe(result => {
+            if(result){
+              this.store.dispatch(new BookActions.RemoveBook(book));
+            }
+        });
   }
 
 }

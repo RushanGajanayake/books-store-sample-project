@@ -28,17 +28,22 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducer } from './reducer/book.reducer';
 import { BooksEffects } from './effects/book.effect';
 import { MoreInfoComponent } from './more-info/more-info.component';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 
 @NgModule({
-  entryComponents: [MoreInfoComponent],
+  entryComponents: [
+    MoreInfoComponent, 
+    ConfirmationDialogComponent
+  ],
   declarations: [
     AppComponent,
     SidenavComponent,
     ToolbarComponent,
     AllBooksComponent,
     BooksHandlingComponent,
-    MoreInfoComponent
+    MoreInfoComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
