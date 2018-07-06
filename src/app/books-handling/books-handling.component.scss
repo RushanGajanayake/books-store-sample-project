@@ -3,6 +3,11 @@
 
   .mat-toolbar-row{
     height: 90px;
+
+    span > h1{
+      margin-left: 40px;
+      font-size: 24px;
+    }
   }
 }
 
@@ -15,7 +20,7 @@
   margin-bottom: 20px;
 }
 
-.book-list{
+.book-list-item{
   margin: 7px;
 }
 
@@ -23,7 +28,7 @@
   display: block;
   position: absolute;
   left: 98%;
-  top: -20px;
+  top: -10px;
 }
 
 .input-form{
@@ -50,9 +55,17 @@
 
 .add-btn{
   padding-left: 15px;
+
+  button{
+    background: #4a0db7;
+  }
 }
 
 .list-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-image: url('/assets/book.jpg');
   background-size: cover;
+}
+
+.book-list{
+  background: #f7f7f7eb;
 }

@@ -2,27 +2,15 @@
   "books": [
     {
       "id": 1,
-      "name": "json-server",
-      "author": "typicode",
-      "discription": " klklklk kllk "
+      "name": "Harry Potter and the Philosopher's Stone",
+      "author": " J. K. Rowling",
+      "discription": "Harry Potter is a series of fantasy novels written by British author J. K. Rowling. The novels chronicle the life of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry"
     },
     {
       "id": 2,
-      "name": "json-server2",
-      "author": "typicode2",
-      "discription": " klklklk kllk "
-    },
-    {
-      "id": 4,
-      "name": "cccccssss",
-      "author": "cccccccccsssss",
-      "discription": "cccccccssss"
-    },
-    {
-      "id": 5,
-      "name": "xxxx",
-      "author": "xxxxxxxx",
-      "discription": "xxxxxxxx"
+      "name": "Percy Jackson & the Olympians",
+      "author": "Rick Riordan",
+      "discription": "Percy Jackson & the Olympians, often shortened to Percy Jackson, is a pentalogy of fantasy adventure novels written by American author Rick Riordan, and the first book series in the Camp Half-Blood Chronicles."
     }
   ]
 }

@@ -30,9 +30,9 @@
             </div>
           </mat-card-content>
       </mat-card>
-      <mat-card>
+      <mat-card class="book-list">
         <div [fxLayout]="'row wrap'">
-          <mat-card class="book-list" *ngFor="let book of books | async;" fxFlex.gt-xs="100%" fxFlex.gt-md="100"  fxLayoutGap="2px">
+          <mat-card class="book-list-item" *ngFor="let book of books | async;" fxFlex.gt-xs="100%" fxFlex.gt-md="100"  fxLayoutGap="2px">
             <button mat-mini-fab class="list-close-btn" (click)="removeBook(book)" color="warn">
               <mat-icon >clear</mat-icon>
             </button>

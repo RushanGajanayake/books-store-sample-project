@@ -3,7 +3,13 @@
 
   .mat-toolbar-row{
     height: 90px;
+
+    span > h1{
+      margin-left: 40px;
+      font-size: 24px;
+    }
   }
+
 }
 
 .container{
@@ -27,12 +33,13 @@
 }
 
 .books-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-image: url('/assets/book.jpg');
   background-size: cover;
 }
 
 .mat-form-field{
-  left: 75%;
+  left: 65%;
   font-size: 18px;
+  width: 20%;
 }
 
